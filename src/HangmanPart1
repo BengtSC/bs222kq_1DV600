@@ -1,0 +1,49 @@
+package HangMan;
+
+import java.util.Scanner;
+
+import java.util.Random;
+
+public class Part1{
+
+	private static String[]words= {"Baseball","Basketball","Polo","Soccer","Tennis"};
+	private static String RandWord;
+	private static String [] Spliter; 
+	private static String [] cloneSplit; 
+	
+	public static void main(String []args) {
+	
+    //Scanner to be used for multiplayer game production and user input. 
+	Scanner sc = new Scanner(System.in);
+		
+	Random RandGen = new Random();
+	
+	int index = RandGen.nextInt(words.length);
+	
+	RandWord = words[index];
+	
+	//System.out.println(Secret);
+	
+	System.out.println("Welcome to Hang Man!\nGuess the word! You have 6 chances before the man hangs!:");
+	
+	System.out.println("Words are related sports!");
+	
+	Spliter = RandWord.split("");
+	
+	//for(int i=0;i<under.length;i++) {
+	//System.out.print(under[i]+" ");
+	//}
+	
+	cloneSplit = Spliter.clone();
+	
+	for(int i  = 0;i<cloneSplit.length;i++) {
+	cloneSplit [i] = cloneSplit[i].replaceAll("[A-Za-z]", "_");
+	System.out.print(cloneSplit[i]+" ");
+	}
+	
+
+
+	}
+	
+
+}  
